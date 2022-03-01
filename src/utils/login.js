@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { loginUser } from './index';
-
+import { RiLoginBoxLine } from 'react-icons/ri';
+import { MdEmail } from 'react-icons/md';
+import {RiLockPasswordFill} from 'react-icons/ri'
 
 const Login = () => {
     const [user, setUser] = useState();
@@ -13,11 +15,11 @@ const Login = () => {
     }
   return (
     <div>
-      <h1>Login</h1>
+      <h1>Login <RiLoginBoxLine/></h1>
       <form onSubmit={loginHandler}>
-        <input type='email' placeholder='email' onChange= {(e)=> setEmail(e.target.value)} />
+        <input type='email' placeholder='email' onChange= {(e)=> setEmail(e.target.value)}/> <MdEmail/>
         <br/>
-        <input type='password' placeholder='password' onChange={(e)=> setPasword(e.target.value)} />
+        <input type='password' placeholder='password' onChange={(e)=> setPasword(e.target.value)}/> <RiLockPasswordFill/>
         <br/>
         <button type='submit'> Login </button>
       </form>    
