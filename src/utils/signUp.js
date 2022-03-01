@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { fetchRequest } from './index';
+import { RiLoginBoxLine } from 'react-icons/ri';
+import { FaUser } from 'react-icons/fa';
+import { MdEmail } from 'react-icons/md';
+import {RiLockPasswordFill} from 'react-icons/ri'
 
 
 const SignUp = () => {
@@ -16,11 +20,11 @@ const SignUp = () => {
     <div>
       <h1>Please singup</h1>
       <form onSubmit={submitHandler}>
-        <input type='text' placeholder='username' onChange={(e) => setUsername(e.target.value)}/>
+        <input type='text' placeholder='username' onChange={(e) => setUsername(e.target.value)} /> <FaUser/>
         <br/>
-        <input type='email' placeholder='email' onChange= {(e)=> setEmail(e.target.value)} />
+        <input type='email' placeholder='email' onChange= {(e)=> setEmail(e.target.value)} /> <MdEmail/>
         <br/>
-        <input type='password' placeholder='password' onChange={(e)=> setPasword(e.target.value)} />
+        <input type='password' placeholder='password' onChange={(e)=> setPasword(e.target.value)} /> <RiLockPasswordFill/>
         <br/>
         <button type='submit'> Sign UP </button>
       </form>        
