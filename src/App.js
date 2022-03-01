@@ -1,9 +1,21 @@
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignUp from './utils/signUp';
+import Login from './utils/login';
 
-function App() {
+
+const App = () => {
+
   return (
-    <div className="App">
-      <p>Front end app</p>
+    <div>
+      <Router>
+        <Routes>
+          <Route path='/login' exact element={<Login/>} />   
+          <Route path='/signUp' exact element={<SignUp/>} />    
+        </Routes>
+      </Router>
+      {/* <SignUp/>     
+      <Login/>   */}
     </div>
   );
 }
