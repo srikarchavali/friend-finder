@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUp from './utils/signUp';
 import Login from './utils/login';
 import UserInfo from './utils/UserInfo';
+import NavBar from './utils/navBar';
 
 
 const App = () => {
@@ -11,8 +12,10 @@ const App = () => {
     <div>
       
       <Router>
+        <NavBar/>
         <Routes>
           <Route path='/' exact element={<h1>Home Page</h1>} />
+          <Route path='/about' exact element={<h1>About Page</h1>} />
           <Route path='/login' exact element={<Login/>}/>   
           <Route path='/signUp' exact element={<SignUp/>}/>    
           <Route path='/user-info' exact element={<UserInfo/>}/> 

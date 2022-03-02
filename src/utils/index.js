@@ -1,4 +1,3 @@
-import { FaAssistiveListeningSystems } from "react-icons/fa";
 
 //  Handles Signup details of user
 export const fetchRequest = async (setUser, username, email, password) => {
