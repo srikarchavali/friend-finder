@@ -1,3 +1,11 @@
 .nav-bar ul li {
-    text-decoration: none;
+    display: inline-block;
+    background: #aeaeb4;
+    list-style-type: none;
+    text-decoration: italic;
+    padding: 15px 15px 15px 15px;
+    margin: 5px;
+    border-radius: 20%;
+    border: solid 2px black;
 }
+

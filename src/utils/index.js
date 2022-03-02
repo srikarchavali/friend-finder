@@ -31,8 +31,8 @@ export const loginUser = async (setUser, email, password) => {
       })
     });
     const data = await response.json();
-  //   console.log(data);
-    return setUser(data)
+    // console.log(data.message);
+    return data.value;
   } catch (error) {
     console.log(error);
   }
