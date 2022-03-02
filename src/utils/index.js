@@ -1,3 +1,4 @@
+import { FaAssistiveListeningSystems } from "react-icons/fa";
 
 //  Handles Signup details of user
 export const fetchRequest = async (setUser, username, email, password) => {
@@ -39,22 +40,24 @@ export const loginUser = async (setUser, email, password) => {
 };
 
 // Handles additional user details
-export const userInfo = async (setUser, gender, age, city, country, activity, intrests) => {
+export const userInfo = async (setUser, name, gender, age, city, country, intrests, activity, activityDescription) => {
   try {
-      const response = await fetch(`${process.env.REACT_APP_REST_API}userinfo`, {
+      const response = await fetch(`${process.env.REACT_APP_REST_API}user-info`, {
           method: "POST",
           headers: {"Content-Type" : "application/json"},
           body: JSON.stringify({
+              name: name,
               gender: gender,
               age: age,
               city: city,
               country: country,
+              intrests: intrests,
               activity: activity,
-              intrests: intrests
+              activityDescription: activityDescription
           })
       })
       const data = await response.json();
-      // console.log(data)
+      console.log(data)
       setUser(data)
   } catch (error) {
       console.log(error)
