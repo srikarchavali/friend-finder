@@ -6,13 +6,8 @@ import { Link } from "react-router-dom";
 import { UserCardData } from "./UserCardData.js";
 
 const UserPage = (state, setState, email) => {
-  const [data, setData] = useState([]);
-
-  const userData = async () => {
-    let info = await UserCardData();
-    setData(info);
-    console.log(info);
-  };
+  let info = UserCardData();
+  console.log(info);
 
   const deleteUser = () => {
     deleteUserInfo(email);
@@ -37,9 +32,17 @@ const UserPage = (state, setState, email) => {
         </button>
       </div>
       <h1>User Profile Cards</h1>
-      {/* {data.map((data, index) => (
-        <p>{data.name}</p>
-      ))} */}
+      {info.map((data) => (
+        <>
+          <img src={data.avatar} alt="" />
+          <p>Name: {data.name}</p>
+          <p>Age: {data.age}</p>
+          <p>Sex: {data.gender}</p>
+          <p>City: {data.city}</p>
+          <p>Country: {data.country}</p>
+          <p>Avatar: {data.avatar}</p>
+        </>
+      ))}
     </>
   );
 };
