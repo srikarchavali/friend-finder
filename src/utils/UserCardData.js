@@ -6,7 +6,7 @@ export const UserCardData = () => {
   for (let i = 0; i < 20; i++) {
     const genders = ["female", "male"];
     const gender = faker.random.arrayElement(genders);
-    const avatar = faker.image.avatar();
+    const image = faker.image.image(gender);
     const name = `${faker.name.firstName(gender)} ${faker.name.lastName(
       gender
     )}`;
@@ -21,7 +21,7 @@ export const UserCardData = () => {
     userData.push({
       name: name,
       gender: gender,
-      avatar: avatar,
+      image: image,
       age: age,
       country: country,
       state: state,

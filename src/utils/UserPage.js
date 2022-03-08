@@ -1,3 +1,4 @@
+import faker from "faker";
 import React, { useState, useEffect } from "react";
 import { IoIosSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
@@ -34,13 +35,13 @@ const UserPage = (state, setState, email) => {
       <h1>User Profile Cards</h1>
       {info.map((data) => (
         <>
-          <img src={data.avatar} alt="" />
+          <img src={faker.image.image()} alt="" />
           <p>Name: {data.name}</p>
           <p>Age: {data.age}</p>
           <p>Sex: {data.gender}</p>
           <p>City: {data.city}</p>
           <p>Country: {data.country}</p>
-          <p>Avatar: {data.avatar}</p>
+          <p>Avatar: {data.avatar}</p> <br />
         </>
       ))}
     </>
