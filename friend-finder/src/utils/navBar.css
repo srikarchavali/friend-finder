@@ -1,0 +1,11 @@
+.nav-bar ul li {
+    display: inline-block;
+    background: white;
+    list-style-type: none;
+    text-decoration: italic;
+    padding: 15px 15px 5px 15px;
+    margin: 5px;
+    border-radius: 20%;
+    border: solid 2px white;
+}
+
