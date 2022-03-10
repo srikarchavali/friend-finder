@@ -12,7 +12,7 @@ export default function Footer() {
     <div className="footer">
       <Section>
         <div className="brand container">
-          <img src={logo} alt="" />
+          <img src={logo} alt="website logo" />
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis,
             repudiandae.

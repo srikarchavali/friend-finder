@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import logo from "../utils/assets";
+import logo from "../utils/assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
-
 
 
 export default function Navbar() {
@@ -15,7 +14,7 @@ export default function Navbar() {
     <>
       <Nav>
         <div className="brand">
-          <img src={logo} alt="Icon" />
+          <img src={logo} alt="brand Icon" />
           <div className="toggle">
             {navbarState ? (
               <VscChromeClose onClick={() => setNavbarState(false)} />
