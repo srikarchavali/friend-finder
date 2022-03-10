@@ -12,9 +12,6 @@ const NavBar = () => {
         <li>
           <Link to="/about">About</Link>
         </li>
-        {/* <li><Link to='/signUp'>SignUp</Link></li> */}
-        {/* <li><Link to='/login'>Login</Link></li> */}
-        {/* <li><Link to='/user-info'>User Info</Link></li> */}
       </ul>
     </nav>
   );
