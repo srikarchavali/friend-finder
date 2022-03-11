@@ -50,12 +50,7 @@
   height: 100%;
   background-position: center;
   background-size: cover;
-<<<<<<< HEAD:src/utils/Login/login.css
   border: #fff 5px dashed;
-=======
-  background-image: linear-gradient(rgba(0, 0, 100, 0.8), rgba(0, 0, 100, 0.8)),
-    url(../utils//assets/image.jpg);
->>>>>>> main:src/utils/login.css
   padding: 55px;
   box-sizing: border-box;
   backface-visibility: hidden;
