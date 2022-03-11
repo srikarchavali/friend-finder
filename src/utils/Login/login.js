@@ -4,7 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import "./login.css";
 import { loginUser, fetchRequest } from "../index";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const logo = require("../assets/logo.png");
 
@@ -35,6 +35,7 @@ const Login = () => {
     e.preventDefault();
     let login = await loginUser(email, password);
     if (login === true) {
+      console.log(login);
       // const data = await allUsers();
       // setUserData(data);
       // setState(!state);
@@ -95,7 +96,7 @@ const Login = () => {
               >
                 I'm New Here
               </button>
-              <ToastContainer />
+              {/* <ToastContainer /> */}
             </div>
             <div className="login-card-back">
               <h2>REGISTER</h2>
