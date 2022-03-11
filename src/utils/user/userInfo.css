@@ -1,3 +1,6 @@
+.user-info {
+  margin: auto;
+}
 .activityDesc {
   overflow-y: scroll;
   width: 300px;
@@ -5,8 +8,6 @@
 }
 
 .user-info-input {
-  /* width: 100%; */
-  /* background: transparent; */
   border: 1px solid rgb(0, 0, 0);
   margin: 6px 0;
   height: 32px;
