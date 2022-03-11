@@ -6,10 +6,12 @@
   width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
   position: relative;
 }
 .user-card {
-  background: rgb(216, 211, 211);
+  background: rgb(255, 255, 255);
   width: 400px;
   height: 610px;
   border-radius: 5%;

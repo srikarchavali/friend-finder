@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { IoIosSettings } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { deleteUserInfo } from "../index";
@@ -17,11 +18,12 @@ const UserPage = () => {
   const deleteUser = () => {
     deleteUserInfo(data.email);
   };
+  const notify = () => toast("Logout Successful");
   return (
     <>
       <div className="login-navbar">
         <Link to="/">
-          <button className="logout">
+          <button className="logout" onClick={notify}>
             <h2>Logout</h2>
           </button>
         </Link>

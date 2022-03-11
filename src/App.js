@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Footer from "./utils/footer/footer.js";
 import Login from "./utils/Login/login";
 import NavBar from "./utils/Navbar/navBar";
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/search" exact element={<SearchBar />} />
         </Routes>
       </Router>
+      <ToastContainer autoClose={1000} />
     </div>
   );
 };
