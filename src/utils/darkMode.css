@@ -1,0 +1,11 @@
+.darkmode--activated p, .darkmode--activated li {
+    color: #000;
+  }
+   
+  .button {
+    isolation: isolate;
+  }
+   
+  .darkmode--activated .logo {
+    mix-blend-mode: difference;
+  }
