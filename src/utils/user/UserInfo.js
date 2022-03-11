@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { userInfo } from "./index";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { userInfo } from "../index";
 import "./userInfo.css";
-import { MdOutlineArrowBack } from "react-icons/md";
 
 const UserInfo = () => {
   const [user, setUser] = useState();
@@ -11,11 +10,12 @@ const UserInfo = () => {
   const [age, setAge] = useState();
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
+  const [image, setImage] = useState();
   const [interests, setInterests] = useState([]);
   const [activity, setActivity] = useState();
   const [activityDescription, setActivityDescription] = useState();
   const [state, setState] = useState(false);
-
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     userInfo(
@@ -25,38 +25,23 @@ const UserInfo = () => {
       age,
       city,
       country,
+      image,
       interests,
       activity,
       activityDescription
     );
-    // console.log(name, activity)
     if (name && interests) {
       setState(!state);
+      setTimeout(() => navigate("/user"), 3000);
     }
   };
 
   return (
-    <div>
+    <div className="user-info">
       {state ? (
-        <>
-          <Link to="/user">
-            <button className="back">
-              <h2>
-                <MdOutlineArrowBack />
-              </h2>
-            </button>
-          </Link>
-          <h1>Details submitted successfully</h1>
-        </>
+        <h2>Details submitted successfully, You are being redirected...</h2>
       ) : (
         <>
-          <Link to="/user">
-            <button className="back-arrow">
-              <h2>
-                <MdOutlineArrowBack />
-              </h2>
-            </button>
-          </Link>
           <h2>Please enter the details</h2>
           <form onSubmit={submitHandler}>
             <input
@@ -66,6 +51,13 @@ const UserInfo = () => {
               required
               placeholder="Full name"
               onChange={(e) => setName(e.target.value)}
+            />
+            <br />
+            <input
+              className="user-info-input"
+              type="text"
+              placeholder="Profile picture Url"
+              onChange={(e) => setImage(e.target.value)}
             />
             <br />
             <input
@@ -99,13 +91,6 @@ const UserInfo = () => {
             <input
               className="user-info-input"
               type="text"
-              placeholder="city"
-              onChange={(e) => setCity(e.target.value)}
-            />
-            <br />
-            <input
-              className="user-info-input"
-              type="text"
               required
               placeholder="interests"
               onChange={(e) => setInterests(e.target.value)}
@@ -128,7 +113,9 @@ const UserInfo = () => {
               onChange={(e) => setActivityDescription(e.target.value)}
             />
             <br />
-            <button type="submit"> Submit </button>
+            <button className="user-info-input" type="submit">
+              Submit
+            </button>
           </form>
         </>
       )}

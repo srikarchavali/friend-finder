@@ -1,22 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignUp from "./utils/signUp";
-import Login from "./utils/login";
-// import UserInfo from './utils/UserInfo';
-import NavBar from "./utils/navBar";
-import UserInfo from "./utils/UserInfo";
-import UserPage from "./utils/UserPage";
+import Footer from "./utils/footer/footer.js";
+import Login from "./utils/Login/login";
+import NavBar from "./utils/Navbar/navBar";
+import SearchBar from "./utils/Search/search";
+import UserInfo from "./utils/user/UserInfo";
+import UserPage from "./utils/user/UserPage";
+import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Router>
-        <NavBar />
         <Routes>
-          <Route path="/" exact element={<Login />} />
-          <Route path="/about" exact element={<h1>About Page</h1>} />
+          <Route
+            path="/"
+            exact
+            element={
+              <div className="home-page">
+                <NavBar />
+                <Login />
+                <Footer />
+              </div>
+            }
+          />
           <Route path="/user" exact element={<UserPage />} />
           <Route path="/userInfo" exact element={<UserInfo />} />
+          <Route path="/search" exact element={<SearchBar />} />
         </Routes>
       </Router>
     </div>

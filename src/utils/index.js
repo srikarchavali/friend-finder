@@ -11,8 +11,21 @@ export const fetchRequest = async (setUser, username, email, password) => {
       }),
     });
     const data = await response.json();
-    console.log(data);
-    setUser(data);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Finds all user
+export const allUsers = async () => {
+  try {
+    const response = await fetch(`${process.env.REACT_APP_REST_API}user`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -39,7 +52,7 @@ export const listUser = async (email) => {
 };
 
 // Handles login details of user
-export const loginUser = async (setUser, email, password) => {
+export const loginUser = async (email, password) => {
   try {
     const response = await fetch(`${process.env.REACT_APP_REST_API}login`, {
       method: "POST",
@@ -65,7 +78,8 @@ export const userInfo = async (
   age,
   city,
   country,
-  intrests,
+  image,
+  interests,
   activity,
   activityDescription
 ) => {
@@ -79,7 +93,8 @@ export const userInfo = async (
         age: age,
         city: city,
         country: country,
-        intrests: intrests,
+        image: image,
+        interests: interests,
         activity: activity,
         activityDescription: activityDescription,
       }),
