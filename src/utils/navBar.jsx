@@ -4,6 +4,8 @@ import styled from "styled-components";
 import logo from "../utils/assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
+//import About from "./src/utils/about";
+//import darkmode from "./src/utils/darkMode";
 
 
 export default function Navbar() {
@@ -43,6 +45,12 @@ export default function Navbar() {
           <li>
             <a href="#signin">Sign In</a>
           </li>
+          {/* <li class="hidden-box"></li>
+          <li class="hidden-box"></li>
+          <li class="hidden-box"></li>
+          <li>
+            <a href="#darkMode">Dark Mode</a>
+          </li> */}
         </ul>
       </Nav>
       <ResponsiveNav state={navbarState} className={navbarState ? "show" : ""}>
@@ -57,7 +65,7 @@ export default function Navbar() {
             </a>
           </li>
           <li>
-            <a href="#About" onClick={() => setNavbarState(false)}>
+            <a href="#About" onClick={(About) => setNavbarState(false)}>
               About
             </a>
           </li>
@@ -71,12 +79,18 @@ export default function Navbar() {
               Sign In
             </a>
           </li>
+          <li>
+            <a href="#darkMode" onClick={(darkmode) => setNavbarState(false)}>
+              Dark Mode
+            </a>
+          </li>
         </ul>
       </ResponsiveNav>
     </>
   );
 }
 
+// NavBar buttons styling
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -95,6 +109,9 @@ const Nav = styled.nav`
     display: flex;
     list-style-type: none;
     gap: 2rem;
+    li.hidden-box {
+      visibility: hidden;
+    }
     li {
       a {
         color: #fc4958;
