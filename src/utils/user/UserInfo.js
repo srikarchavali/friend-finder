@@ -95,6 +95,7 @@ const UserInfo = () => {
               placeholder="interests"
               onChange={(e) => setInterests(e.target.value)}
             />
+            <br />
             <label htmlFor="Interests">
               Add multiple interests separated by comma
             </label>
