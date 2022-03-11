@@ -21,6 +21,13 @@ const Login = () => {
     const data = fetchRequest(setUser, username, email, password);
     if (data) {
       openLogin();
+      const customId = "custom-id-yes";
+      const notify = () => {
+        toast("Successfully Registered", {
+          toastId: customId,
+        });
+      };
+      notify();
     }
   };
 
@@ -32,13 +39,11 @@ const Login = () => {
       // setUserData(data);
       // setState(!state);
       navigate("/user");
-      notify();
+      const notify = () => {
+        toast(`Welcome ${email}`);
+      };
+      notify(email);
     }
-  };
-
-  const notify = () => {
-    toast("Welcome");
-    console.log("welcome");
   };
 
   const openRegister = () => {
@@ -82,7 +87,6 @@ const Login = () => {
                 <button type="submit" className="login-submit-btn">
                   Login
                 </button>
-                <ToastContainer />
               </form>
               <button
                 type="button"
@@ -91,6 +95,7 @@ const Login = () => {
               >
                 I'm New Here
               </button>
+              <ToastContainer />
             </div>
             <div className="login-card-back">
               <h2>REGISTER</h2>
@@ -119,7 +124,7 @@ const Login = () => {
                 <button type="submit" className="login-submit-btn">
                   Submit
                 </button>
-                <ToastContainer />
+                {/* <ToastContainer /> */}
               </form>
               <button type="button" className="login-btn" onClick={openLogin}>
                 I have an account
