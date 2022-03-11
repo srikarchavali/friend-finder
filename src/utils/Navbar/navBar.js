@@ -5,14 +5,8 @@ import "./navBar.css";
 const NavBar = () => {
   return (
     <nav className="nav-bar">
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-      </ul>
+      <h1>Friendy</h1>
+      <p>Find | Connect | Enjoy !</p>
     </nav>
   );
 };

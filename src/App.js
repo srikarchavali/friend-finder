@@ -6,24 +6,24 @@ import NavBar from "./utils/Navbar/navBar";
 import SearchBar from "./utils/Search/search";
 import UserInfo from "./utils/user/UserInfo";
 import UserPage from "./utils/user/UserPage";
+import "./App.css";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Router>
-        {/* <NavBar /> */}
         <Routes>
           <Route
             path="/"
             exact
             element={
-              <>
+              <div className="home-page">
+                <NavBar />
                 <Login />
                 <Footer />
-              </>
+              </div>
             }
           />
-          {/* <Route path="/about" exact element={<h1>About Page</h1>} /> */}
           <Route path="/user" exact element={<UserPage />} />
           <Route path="/userInfo" exact element={<UserInfo />} />
           <Route path="/search" exact element={<SearchBar />} />

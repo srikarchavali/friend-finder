@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.png";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
+const logo = require("../assets/follow.png");
 
 function Footer() {
   return (
@@ -62,7 +62,7 @@ function Footer() {
 
 const Section = styled.footer`
   margin: 0;
-  background: linear-gradient(to right, #fc4958, #e85d04);
+  //   background: linear-gradient(to right, #fc4958, #e85d04);
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -102,10 +102,10 @@ const Section = styled.footer`
       }
     }
   }
-  img {
-    filter: brightness(0) invert(1);
-    width: 10vw;
-  }
+  //   img {
+  //     filter: brightness(0) invert(1);
+  //     width: 10vw;
+  //   }
   .container {
     display: flex;
     flex-direction: column;

@@ -6,6 +6,7 @@ import "./login.css";
 import { loginUser, fetchRequest } from "../index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const logo = require("../assets/logo.png");
 
 const Login = () => {
   const [user, setUser] = useState();
@@ -52,15 +53,16 @@ const Login = () => {
 
   return (
     <div>
-      <div className="container">
-        <div className="card">
-          <div className="inner-box" id="card">
-            <div className="card-front">
+      <div className="login-container">
+        <img src={logo} alt="logo" />
+        <div className="login-card">
+          <div className="login-inner-box" id="card">
+            <div className="login-card-front">
               <h2>LOGIN</h2>
               <form onSubmit={loginHandler}>
-                <div className="icon">
+                <div className="login-icon">
                   <input
-                    className="input-box"
+                    className="login-input-box"
                     onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     placeholder="Enter your email"
@@ -68,54 +70,58 @@ const Login = () => {
                   />
                   <MdEmail />
                 </div>
-                <div className="icon">
+                <div className="login-icon">
                   <input
-                    className="input-box"
+                    className="login-input-box"
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"
                     placeholder="Password"
                   />{" "}
                   <RiLockPasswordFill />
                 </div>
-                <button type="submit" className="submit-btn">
+                <button type="submit" className="login-submit-btn">
                   Login
                 </button>
                 <ToastContainer />
               </form>
-              <button type="button" className="btn" onClick={openRegister}>
+              <button
+                type="button"
+                className="login-btn"
+                onClick={openRegister}
+              >
                 I'm New Here
               </button>
             </div>
-            <div className="card-back">
+            <div className="login-card-back">
               <h2>REGISTER</h2>
               <form onSubmit={signUpHandler}>
                 <input
-                  className="input-box"
+                  className="login-input-box"
                   type="text"
                   placeholder="Enter Username"
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 />
                 <input
-                  className="input-box"
+                  className="login-input-box"
                   type="email"
                   placeholder="Enter your email"
                   onChange={(e) => setEmail(e.target.value)}
                   required
                 />
                 <input
-                  className="input-box"
+                  className="login-input-box"
                   type="password"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
-                <button type="submit" className="submit-btn">
+                <button type="submit" className="login-submit-btn">
                   Submit
                 </button>
                 <ToastContainer />
               </form>
-              <button type="button" className="btn" onClick={openLogin}>
+              <button type="button" className="login-btn" onClick={openLogin}>
                 I have an account
               </button>
             </div>

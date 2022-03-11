@@ -1,22 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Pacifico&display=swap");
 .nav-bar {
   position: relative;
-  left: 80%;
-  margin-top: 30px;
+  margin-left: 50px;
+  padding: 0;
+  width: 300px;
+  /* border: #fff 5px dashed; */
 }
-.nav-bar ul li {
-  display: inline;
-  background: #ffffff;
-  list-style-type: none;
-  /* text-decoration: none; */
-  border: 1px solid rgb(0, 0, 0);
-  margin: 35px 5px 10px;
-  height: 32px;
-  width: 50px;
-  font-size: 12px;
-  border-radius: 20px;
-  padding: 10px;
-  box-sizing: border-box;
-  /* outline: none; */
-  color: rgb(0, 0, 0);
-  cursor: pointer;
+.nav-bar h1 {
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: lighter;
+  font-family: "Pacifico", cursive;
+}
+.nav-bar p {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: lighter;
+  font-family: "Montserrat", sans-serif;
 }
